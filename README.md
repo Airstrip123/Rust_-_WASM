@@ -17,3 +17,44 @@ A web application that takes an integer input and checks if it is prime.
 ## Setup Notes
 - Requires nightly Rust with MVP target CPU flag due to webpack 4 compatibility issue with Rust 1.82+
 - Requires Node.js v16 via nvm due to webpack-dev-server compatibility
+- 
+---
+
+## How to Run
+
+### Part 1
+Requires WABT and Node.js installed.
+```bash
+cd Part_1
+wat2wasm recursive.wat -o recursive.wasm
+node run.js
+```
+
+### Part 2 & 3 (wasm-is-prime)
+Requires nightly Rust, wasm-pack, Node.js v16 via nvm.
+
+**First time setup:**
+```bash
+nvm use 16
+cd wasm-is-prime
+wasm-pack build
+cd www
+npm install
+```
+
+**Run the app:**
+```bash
+cd wasm-is-prime/www
+nvm use 16
+npm run start
+```
+Navigate to `http://localhost:8080` in your browser.
+
+**If you change any Rust code in `src/lib.rs`, rebuild first:**
+```bash
+cd wasm-is-prime
+wasm-pack build
+cd www
+npm install
+npm run start
+```
