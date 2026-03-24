@@ -1,4 +1,4 @@
-# ECE 421 - Lab 9: Rust and WebAssembly
+# ECE 421 - Lab 7: Rust and WebAssembly
 
 ## Part 1: WebAssembly Text Format
 A recursive WAT function `RecursiveCount(n)` that sums all integers from n up to 10.
